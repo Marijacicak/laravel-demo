@@ -12,6 +12,10 @@ class Task extends Model
 
     protected $fillable = ['title', 'description', 'completed'];
 
+    protected $casts = [
+        'completed' => 'boolean',
+    ];
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
